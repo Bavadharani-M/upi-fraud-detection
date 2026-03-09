@@ -1,0 +1,132 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= PAGE ================= */
+.blocked-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a0000, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ================= WARNING BUBBLES ================= */
+.bubble {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: float 10s infinite alternate ease-in-out;
+}
+
+.bubble.red {
+  background: #ff1a1a;
+  top: -100px;
+  left: -100px;
+}
+
+.bubble.orange {
+  background: #ff8c00;
+  bottom: -120px;
+  right: -120px;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(40px);
+  }
+}
+
+/* ================= CARD ================= */
+.blocked-card {
+  width: 420px;
+  padding: 36px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  text-align: center;
+  z-index: 2;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* ================= TEXT ================= */
+.blocked-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ff4d4d;
+  margin-bottom: 10px;
+}
+
+.blocked-sub {
+  font-size: 14px;
+  color: #f1cfcf;
+  margin-bottom: 18px;
+}
+
+/* ================= REASONS ================= */
+.reason-box {
+  background: rgba(255, 0, 0, 0.15);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 14px;
+  padding: 14px;
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.reason-box p {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #ffdede;
+}
+
+/* ================= ACTION ================= */
+.action-text {
+  font-size: 14px;
+  color: #ffecec;
+  margin-bottom: 16px;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: transform 0.2s ease;
+}
+
+.btn.temp {
+  background: linear-gradient(135deg, #ffb703, #fb8500);
+  color: #3a1f00;
+}
+
+.btn.freeze {
+  background: linear-gradient(135deg, #ff1a1a, #b00000);
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.04);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+  .blocked-card {
+    width: 90%;
+  }
+}

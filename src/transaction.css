@@ -1,0 +1,94 @@
+/* PAGE BACKGROUND */
+.txn-page {
+  min-height: 100vh;
+  padding: 35px;
+  background: linear-gradient(135deg, #e8f3ff, #ffffff);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* TITLE */
+.txn-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 30px;
+}
+
+/* TWO COLUMN LAYOUT */
+.txn-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* CARD */
+.txn-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 90, 200, 0.15);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.txn-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ACTIVE CARD */
+.txn-card.active {
+  border-color: #3b82f6;
+  background: #f0f7ff;
+}
+
+/* CARD TEXT */
+.txn-card h3 {
+  font-size: 20px;
+  color: #1e40af;
+  margin-bottom: 10px;
+}
+
+.txn-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* DETAILS BOX */
+.txn-details {
+  margin-top: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 12px 35px rgba(0, 90, 200, 0.18);
+}
+
+.txn-details h3 {
+  font-size: 22px;
+  color: #1e3a8a;
+  margin-bottom: 25px;
+}
+
+/* ROWS */
+.txn-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5efff;
+  font-size: 15px;
+}
+
+.txn-row span:first-child {
+  color: #374151;
+  font-weight: 500;
+}
+
+.txn-row span:last-child {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* STATUS */
+.success {
+  color: #16a34a;
+}
