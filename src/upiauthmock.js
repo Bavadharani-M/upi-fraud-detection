@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./upiAuthMock.css";
+import "./upiauthmock.css";
 
 const UPIAuthMock = () => {
   const navigate = useNavigate();
