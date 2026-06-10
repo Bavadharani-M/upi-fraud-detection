@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./payment.css";
 import { saveTransaction } from "./transactionservice"; // ✅ ADDED
-import { logTransaction } from "./transactionlogger";
+
 
 const Payment = () => {
   const location = useLocation();

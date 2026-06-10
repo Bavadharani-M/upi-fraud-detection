@@ -13,7 +13,7 @@ import Transactions from "./transaction";
 import ProtectedRoute from "./protectedroute";
 import TempFreeze from "./tempfreeze";
 import PermanentFreeze from "./permfreeze";
-import TamperDetection from "./tamperdetection"; 
+import TamperDetection from "./TamperDetection"; 
 
 
 import UPIAuthMock from "./upiauthmock"; // ✅ NEW (safe mock screen)

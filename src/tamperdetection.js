@@ -8,9 +8,10 @@ const TamperDetection = () => {
 
   const [status, setStatus] = useState("Checking scanner...");
 
-  useEffect(() => {
-    startCamera();
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  startCamera();
+}, []);
 
   const startCamera = async () => {
     try {
