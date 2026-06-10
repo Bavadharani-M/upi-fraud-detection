@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 const TamperDetection = () => {
@@ -8,33 +8,44 @@ const TamperDetection = () => {
 
   const [status, setStatus] = useState("Checking scanner...");
 
- 
-  const startCamera = async () => {
+  const startCamera = useCallback(async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+      });
+
       videoRef.current.srcObject = stream;
 
       setInterval(checkTamper, 2000);
     } catch (error) {
       console.error("Camera error:", error);
     }
-  };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-useEffect(() => {
-  startCamera();
-}, []);
+  }, []);
+
+  useEffect(() => {
+    startCamera();
+  }, [startCamera]);
 
   const checkTamper = () => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
 
+    if (!video || !canvas) return;
+
     const context = canvas.getContext("2d");
+
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
 
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+    const imageData = context.getImageData(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
     const pixels = imageData.data;
 
     let brightness = 0;
@@ -69,10 +80,16 @@ useEffect(() => {
       <video
         ref={videoRef}
         autoPlay
-        style={{ width: "400px", border: "2px solid black" }}
+        style={{
+          width: "400px",
+          border: "2px solid black",
+        }}
       />
 
-      <canvas ref={canvasRef} style={{ display: "none" }} />
+      <canvas
+        ref={canvasRef}
+        style={{ display: "none" }}
+      />
 
       <h3>{status}</h3>
     </div>
