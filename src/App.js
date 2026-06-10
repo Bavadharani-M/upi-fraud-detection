@@ -40,7 +40,7 @@ function App() {
           }
         >
           <Route index element={<Dashboard />} />
-          <Route path="tamper-check" element={<tamperdetection />} />
+          <Route path="tamper-check" element={<TamperDetection />} />
           <Route path="payment" element={<Payment />} />
           <Route path="upi-auth" element={<UPIAuthMock />} /> {/* ✅ NEW */}
           <Route path="fake" element={<FakeQR />} />
