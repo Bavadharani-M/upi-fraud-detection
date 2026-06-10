@@ -8,11 +8,7 @@ const TamperDetection = () => {
 
   const [status, setStatus] = useState("Checking scanner...");
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-useEffect(() => {
-  startCamera();
-}, []);
-
+ 
   const startCamera = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -23,6 +19,10 @@ useEffect(() => {
       console.error("Camera error:", error);
     }
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  startCamera();
+}, []);
 
   const checkTamper = () => {
     const video = videoRef.current;
